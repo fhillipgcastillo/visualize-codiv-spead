@@ -1,5 +1,6 @@
 {
   "name": "visualize-codiv-spead",
+  "description": "This is a react project to visualize some COVID-19 speach over time with graphs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,7 +9,8 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "recharts": "^1.8.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,5 +32,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "moment": "^2.26.0"
   }
 }
