@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import CustomPieChart from "../components/CustomPieChart";
+import Title from "../components/Title";
 
 export default function SummaryGlobalChart({ global }) {
   console.log("global", global);
@@ -37,13 +38,16 @@ export default function SummaryGlobalChart({ global }) {
   return (
     <Container>
       <Row>
-        <Col md={4} style={{ height: 250, marginTop: 10, marginBottom: 10 }}>
+        <Col sm={12} lg={4} style={{ height: 250, marginTop: 10, marginBottom: 30 }}>
+          <Row><Title>Confirmed Cases</Title></Row>
           <CustomPieChart data={confirmed} fill="#8884d8" />
         </Col>
-        <Col md={4} style={{ height: 250, marginTop: 10, marginBottom: 10 }}>
+        <Col sm={12} lg={4} style={{ height: 250, marginTop: 10, marginBottom: 30 }}>
+          <Row><Title>Death Cases</Title></Row>
           <CustomPieChart data={deaths} fill="#ff6d6d" />
         </Col>
-        <Col md={4} style={{ height: 250, marginTop: 10, marginBottom: 10 }}>
+        <Col sm={12} lg={4} style={{ height: 250, marginTop: 10, marginBottom: 30 }}>
+          <Row><Title>Recovered Cases</Title></Row>
           <CustomPieChart data={recovered} fill="#bcb800" />
         </Col>
       </Row>
