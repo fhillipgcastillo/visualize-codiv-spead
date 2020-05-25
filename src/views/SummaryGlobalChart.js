@@ -39,15 +39,15 @@ export default function SummaryGlobalChart({ global }) {
     <Container>
       <Row>
         <Col sm={12} lg={4} style={{ height: 250, marginTop: 10, marginBottom: 30 }}>
-          <Row><Title>Confirmed Cases</Title></Row>
+          <Title>Confirmed Cases</Title>
           <CustomPieChart data={confirmed} fill="#8884d8" />
         </Col>
         <Col sm={12} lg={4} style={{ height: 250, marginTop: 10, marginBottom: 30 }}>
-          <Row><Title>Death Cases</Title></Row>
+          <Title>Death Cases</Title>
           <CustomPieChart data={deaths} fill="#ff6d6d" />
         </Col>
         <Col sm={12} lg={4} style={{ height: 250, marginTop: 10, marginBottom: 30 }}>
-          <Row><Title>Recovered Cases</Title></Row>
+          <Title>Recovered Cases</Title>
           <CustomPieChart data={recovered} fill="#bcb800" />
         </Col>
       </Row>
