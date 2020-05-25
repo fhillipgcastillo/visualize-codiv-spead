@@ -18,21 +18,21 @@ export default function SummaryGlobalChart({ global }) {
   const deaths = [
     {
       name: "Total Deaths",
-      value: global.TotalConfirmed,
+      value: global.TotalDeaths,
     },
     {
       name: "New Deaths",
-      value: global.NewConfirmed,
+      value: global.NewDeaths,
     },
   ];
   const recovered = [
     {
-      name: "Total Deaths",
-      value: global.TotalConfirmed,
+      name: "Total Revovered",
+      value: global.TotalRecovered,
     },
     {
-      name: "New Deaths",
-      value: global.NewConfirmed,
+      name: "New Revovered",
+      value: global.NewRecovered,
     },
   ];
   return (
