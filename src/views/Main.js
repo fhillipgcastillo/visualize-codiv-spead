@@ -1,32 +1,48 @@
 import React from "react";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend  } from "recharts";
-import axios from 'axios';
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
+import { getData, setFromData } from "../tools/api";
+import Button from '../components/Button';
+
 
 export default function Main(props) {
   const [spread, setSpread] = React.useState([]);
-  const apiUrl = "https://api.covid19api.com/country/dominican-republic";
+  const handleGetData = () => setFromData(setSpread);
 
-  const handleGetData = () => axios.get(apiUrl, {contentType: "json"}).then(res=> {
-    console.log('res api', res)
-    setSpread(res.data);
-  });
-  
   return (
-    <div className="App">
+    <div className="App" style={{ width: "100%", height: 600 }}>
       {spread.length > 0 ? (
-        <LineChart width={1200} height={800}  data={spread}>
-          <Line type="monotone" dataKey="Confirmed" stroke="#8884d8"/>
-          <Line type="monotone" dataKey="Active" />
-          <Line type="monotone" dataKey="Recovered" />
-          <Line type="monotone" dataKey="Deaths" />
-          <Tooltip />
-          <Legend />
-          <CartesianGrid stroke="#ccc" />
-          <XAxis />
-          <YAxis dataKey="Confirmed" />
-        </LineChart>
+        <ResponsiveContainer>
+          <LineChart
+            data={spread}
+            margin={{
+              top: 10,
+              right: 10,
+              left: 10,
+              bottom: 10,
+            }}
+          >
+            <Line type="monotone" dataKey="Confirmed" stroke="#8884d8" />
+            <Line type="monotone" dataKey="Active" stroke="#0ec40e" />
+            <Line type="monotone" dataKey="Recovered" stroke="#bcb800" />
+            <Line type="monotone" dataKey="Deaths" stroke="#ff6d6d"/>
+            <Tooltip />
+            <Legend />
+            <CartesianGrid stroke="#ccc" />
+            <XAxis dataKey="Date"/>
+            <YAxis dataKey="Confirmed" />
+          </LineChart>
+        </ResponsiveContainer>
       ) : (
-        <button onClick={handleGetData}>Load Charts</button>
+        <Button onClick={handleGetData}>Load Charts</Button>
       )}
     </div>
   );
