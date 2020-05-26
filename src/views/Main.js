@@ -1,18 +1,8 @@
 import React from "react";
-import {
-  LineChart,
-  Line,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
-import { getData, setFromData, getAllCountries, getSummary } from "../tools/api";
-import {Container} from 'react-bootstrap';
-import CountriesDropDown from '../components/CountriesDropDown';
+import { Container } from 'react-bootstrap';
+import { getSummary, setFromData } from "../tools/api";
 import SummaryGlobalChart from './SummaryGlobalChart';
+import SummaryByCounrtries from "./SummaryByCounrtries";
 
 
 export default function Main(props) {
@@ -36,6 +26,7 @@ export default function Main(props) {
   return (
     <Container className="App" fluid="sm" >
       <SummaryGlobalChart global={summary.Global} />
+      <SummaryByCounrtries countries={summary.Countries} />
     </Container>
   );
 }

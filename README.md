@@ -1,3 +1,8 @@
+## Resources
+* [api source](https://api.covid19api.com)
+* [Inspiration page](https://www.trackcorona.live/)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -4,39 +4,38 @@ import CustomPieChart from "../components/CustomPieChart";
 import Title from "../components/Title";
 
 export default function SummaryGlobalChart({ global }) {
-  console.log("global", global);
   const confirmed = [
     {
-      name: "Total Confirmed",
+      name: "Total",
       value: global.TotalConfirmed,
     },
     {
-      name: "New Confirmed",
+      name: "New",
       value: global.NewConfirmed,
     },
   ];
   const deaths = [
     {
-      name: "Total Deaths",
+      name: "Total",
       value: global.TotalDeaths,
     },
     {
-      name: "New Deaths",
+      name: "New",
       value: global.NewDeaths,
     },
   ];
   const recovered = [
     {
-      name: "Total Revovered",
+      name: "Total",
       value: global.TotalRecovered,
     },
     {
-      name: "New Revovered",
+      name: "New",
       value: global.NewRecovered,
     },
   ];
   return (
-    <Container>
+    <Container style={{margin: "25px auto"}}>
       <Row>
         <Col sm={12} lg={4} style={{ height: 250, marginTop: 10, marginBottom: 30 }}>
           <Title>Confirmed Cases</Title>
